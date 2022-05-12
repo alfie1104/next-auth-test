@@ -19,7 +19,7 @@ async function handler(req, res) {
   const newPassword = req.body.newPassword;
 
   const client = await connectToDatabase();
-  const usersCollection = client.db().collections("users");
+  const usersCollection = client.db().collection("users");
 
   const user = await usersCollection.findOne({ email: userEmail });
 
